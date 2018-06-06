@@ -1,0 +1,41 @@
+<div style="float: left;margin-left:40%">
+    <button style="margin-bottom:30px"(click)="goBack()">Sign In</button>
+
+  <div>
+      <label>
+          <div style="width: 125px;float:left">firstName:</div>
+        <input [(ngModel)]="firstName" placeholder="firstName"/>
+      </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 125px;float:left">lastName:</div>
+          <input [(ngModel)]="lastName" placeholder="lastName"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 125px;float:left">email:</div>
+          <input [(ngModel)]="email" placeholder="email"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 125px;float:left">Old password:</div>
+            <input type="password"   placeholder="password" [(ngModel)]="password">
+        </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 125px;float:left">New password:</div>
+            <input type="password"  placeholder="password" [(ngModel)]="newPassword">
+        </label>
+  </div>
+  <div *ngIf="password != newPassword"  style="color:red">Password doesn't match</div>
+
+  <button style="width: 286px;" (click)="save()">Register</button>
+
+
+
+
+

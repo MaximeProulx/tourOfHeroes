@@ -1,0 +1,14 @@
+<app-menu></app-menu>
+<div style="float: left;padding-left:5%; width:84%">
+
+<h3 style="text-align: left">Top Heroes</h3>
+<div class="grid grid-pad">
+    <a *ngFor="let hero of heroes" class="col-1-4"
+    routerLink="/detail/{{hero._id}}">
+    <div class="module hero">
+      <h4>{{hero.alias}}</h4>
+    </div>
+  </a>
+</div>
+
+</div>

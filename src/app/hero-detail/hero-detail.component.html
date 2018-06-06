@@ -1,0 +1,69 @@
+<app-menu></app-menu>
+<div style="float: left;padding-left:25%;">
+
+<button style="margin-top:20px"(click)="goBack()">go back</button>
+<div *ngIf="hero" >
+  <h2>{{ hero.alias | uppercase }} Details</h2>
+  <div><span>_id: </span>{{hero._id}}</div>
+  <div>
+    <label>
+        <div style="width: 90px;float:left">alias:</div>
+        <input [(ngModel)]="hero.alias" placeholder="alias"/>
+      </label>
+  </div>
+  <div>
+      <label>
+          <div style="width: 90px;float:left">firstName:</div>
+        <input [(ngModel)]="hero.firstName" placeholder="firstName"/>
+      </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 90px;float:left">lastName:</div>
+          <input [(ngModel)]="hero.lastName" placeholder="lastName"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 90px;float:left">phone:</div>
+            <input class="form-control"
+            [(ngModel)]="hero.phone"
+             #phone="ngModel"
+             placeholder="phone"
+             pattern="^(\+?(\d{1}|\d{2}|\d{3})[- ]?)?\d{3}[- ]?\d{3}[- ]?\d{4}$">
+        </label>
+
+    </div>
+    <div>
+        <label>
+            <div style="width: 90px;float:left">address:</div>
+          <input [(ngModel)]="hero.address" placeholder="address"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 90px;float:left">city:</div>
+          <input [(ngModel)]="hero.city" placeholder="city"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 90px;float:left">postalCode:</div>
+          <input [(ngModel)]="hero.postalCode" placeholder="postalCode"/>
+        </label>
+    </div>
+    <button style="width: 252px;" (click)="save()">save</button>
+
+    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+      class="alert alert-danger" style="color:red">
+      <div *ngIf="phone.errors">
+          Phone must be a phone.
+          </div>
+    </div>
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,17 @@
+<div *ngIf="user" style="padding-top:25px;  border-right: solid; width:15%;height: 100vh;float: left" >
+
+<div id='cssmenu'>
+  <div  style="border-bottom: solid">
+     <a style="text-decoration: none;color:#369;line-height: 28px;" routerLink="/user/{{user._id}}">{{user.firstName}} {{user.lastName}} </a>
+      <button class="btn btn-default" style="float:right;padding:2px" (click)="logout()"> Logout</button>
+  </div>
+    <app-hero-search></app-hero-search>
+    <ul>
+       <li><a routerLink="/dashboard">Dashboard</a></li>
+       <li> <a routerLink="/heroes">Heroes</a></li>
+       <li *ngIf="user.role==1" class='last'><a routerLink="/users"><span>Users</span></a></li>
+    </ul>
+    <app-messages ></app-messages>
+
+  </div>
+</div>

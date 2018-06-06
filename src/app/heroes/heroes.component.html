@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+<div style="float: left;padding-left:21%;">
+    <h2 style>My Heroes</h2>
+  <div>
+    <div>
+      <label>Hero alias:
+        <input #alias />
+      </label>
+      <button (click)="add(alias.value); alias.value=''">
+        add
+      </button>
+    </div>
+  </div>
+  <ul class="heroes">
+      <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero._id}}">
+          <span class="badge" style="width: 45%">{{hero._id}}</span> {{hero.alias}}
+        </a>
+        <button class="delete" title="delete hero" style="float:right" (click)="delete(hero)">x</button>
+      </li>
+    </ul>
+  </div>
+
+

@@ -1,0 +1,13 @@
+<app-menu></app-menu>
+
+<div style="float: left;padding-left:22%;">
+    <h2 style>My Users</h2>
+  <ul class="heroes">
+      <li *ngFor="let user of users">
+          <a routerLink="/user/{{user._id}}"><span class="badge" style="width: 45%">{{user._id}}</span> {{user.firstName}} {{user.lastName}}</a>
+          <button class="delete" title="delete hero" style="float:right" (click)="delete(user)">x</button>
+      </li>
+    </ul>
+  </div>
+
+

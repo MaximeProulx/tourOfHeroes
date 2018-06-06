@@ -1,0 +1,20 @@
+<div class="row center">
+  <div class="col-md-6">
+    <h1 style="text-align: center">Login </h1>
+    <form>
+        <div class="form-group">
+          <div style="width: 100px;float:left"><label  for="email">Email:</label></div>
+           <input  type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+        </div>
+        <div class="form-group">
+            <div style="width: 100px;float:left"><label  for="pwd">Password:</label></div>
+          <input type="password" class="form-control" id="pwd" name="passowrd" [(ngModel)]="password">
+        </div>
+        <button style="width: 131px;" class="btn btn-default" (click)="login()">Sign in</button>
+        <button style="width: 131px;" class="btn btn-default" (click)="register()">Register</button>
+      </form>
+  </div>
+</div>
+<app-messages style="text-align:center"></app-messages>
+
+

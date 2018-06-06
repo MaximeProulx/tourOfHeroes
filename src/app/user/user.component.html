@@ -1,0 +1,46 @@
+<app-menu></app-menu>
+<div style="float: left;margin-left:25%">
+    <button style="margin-top:20px"(click)="goBack()">go back</button>
+
+<div *ngIf="user" >
+  <h2>{{ user.firstName | uppercase }} {{ user.lastName | uppercase }}  Details</h2>
+  <div>
+      <label>
+          <div style="width: 125px;float:left">firstName:</div>
+        <input [(ngModel)]="user.firstName" placeholder="firstName"/>
+      </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 125px;float:left">lastName:</div>
+          <input [(ngModel)]="user.lastName" placeholder="lastName"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            <div style="width: 125px;float:left">email:</div>
+          <input [(ngModel)]="user.email" placeholder="email"/>
+        </label>
+    </div>
+    <div *ngIf="user._id == loggedUser._id" >
+      <div>
+          <label>
+              <div style="width: 125px;float:left">Old password:</div>
+              <input type="password"   placeholder="password" [(ngModel)]="password">
+          </label>
+      </div>
+      <div *ngIf="password != user.password && password!=null"  style="color:red">Password doesn't match</div>
+      <div>
+          <label>
+              <div style="width: 125px;float:left">New password:</div>
+              <input type="password"  placeholder="password" [(ngModel)]="newPassword">
+          </label>
+      </div> <div *ngIf="newPassword == user.password"  style="color:red">Password must be different</div>
+  </div>
+</div>
+  <button style="width: 286px;" (click)="save()">save</button>
+</div>
+
+
+
+
